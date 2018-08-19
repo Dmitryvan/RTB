@@ -1,18 +1,25 @@
 package com.rtb.Tests;
 
-import com.rtb.Pages.HomePage;
-import com.rtb.Pages.VisitPage;
+import com.rtb.Pages.LoginPage;
 import com.rtb.Settings.Base;
 import org.junit.Test;
 
+
 public class LoginTest extends Base {
 
-    //login
+    //Login on Development
     @Test
-    public void login() throws InterruptedException {
+    public void login()  {
         VisitPage visitpage = new VisitPage(driver);
         visitpage.enterStore();
         HomePage homepage = new HomePage(driver);
-        homepage.clickSignIn();
+        homepage.clickMyAccount();
+        LoginPage loginpage = new LoginPage(driver);
+        loginpage.loginSite(userEmail, userPassword);
     }
+
+//    @Test //Check text elements on the page
+
+
+
 }
