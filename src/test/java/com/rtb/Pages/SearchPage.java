@@ -5,15 +5,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static java.lang.Thread.*;
 
 
 public class SearchPage extends Base {
 
-    private WebDriver driver;
+    static WebDriver driver;
 
     public SearchPage(WebDriver driver){this.driver = driver; }
+
+    static WebDriverWait wait;
 
     By wantToReadButtonLocator1 = By.cssSelector("#\\31 _book_34804524 > div:nth-child(1) > form:nth-child(1) > button:nth-child(13)");
     By wantToReadButtonLocator2 = By.cssSelector("#\\32 _book_6271941 > div:nth-child(1) > form:nth-child(1) > button:nth-child(13)");
@@ -36,13 +41,16 @@ public class SearchPage extends Base {
 
     By reviewFieldLocator = By.id("review_review_usertext");
 
-    public void clickWantToReadButtons123 () throws InterruptedException {
+    public void clickWantToReadButtons123 () {
+        WebDriverWait wait = (new WebDriverWait(driver,5));
         driver.findElement(wantToReadButtonLocator1).click();
-        sleep (1000);
+        wait.until(ExpectedConditions.presenceOfElementLocated(wantToReadButtonLocator1));
+
         driver.findElement(wantToReadButtonLocator2).click();
-        sleep (1000);
+        wait.until(ExpectedConditions.presenceOfElementLocated(wantToReadButtonLocator2));
+
         driver.findElement(wantToReadButtonLocator3).click();
-        sleep (1000);
+        wait.until(ExpectedConditions.presenceOfElementLocated(wantToReadButtonLocator3));
     }
 
     private void clickRead () {
@@ -78,22 +86,28 @@ public class SearchPage extends Base {
     }
 
 
-    public void clickRate1 () throws InterruptedException {
+    public void clickRate1 () {
         WebElement star = driver.findElement(rate1Locator1);
+        wait = (new WebDriverWait(driver,5));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(rate1Locator1)));
+
         Actions builder = new Actions(driver);
-        sleep (1000);
         builder.moveToElement(star).click().perform();
     }
-    public void clickRate3 () throws InterruptedException {
+    public void clickRate3 () {
         WebElement star = driver.findElement(rate3Locator3);
+        wait = (new WebDriverWait(driver,5));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(rate3Locator3)));
+
         Actions builder = new Actions(driver);
-        sleep (1000);
         builder.moveToElement(star).click().perform();
     }
-    public void clickRate5 () throws InterruptedException {
+    public void clickRate5 ()  {
         WebElement star = driver.findElement(rate5Locator5);
+        wait = (new WebDriverWait(driver,5));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(rate5Locator5)));
+
         Actions builder = new Actions(driver);
-        sleep (1000);
         builder.moveToElement(star).click().perform();
     }
 
@@ -103,6 +117,7 @@ public class SearchPage extends Base {
         WebElement rev = driver.findElement(reviewLocator1);
         rev.click();
         WebElement revfield = driver.findElement(reviewFieldLocator);
+
         revfield.click();
         revfield.sendKeys(review);
     }

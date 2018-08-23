@@ -28,11 +28,11 @@ public class Base {
         driver = new ChromeDriver();
         driver.get("https://www.goodreads.com");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
-    @After
-    public void tearDown(){
-        driver.close();
-    }
+//    @After
+//    public void tearDown(){
+//        driver.close();
+//    }
 }

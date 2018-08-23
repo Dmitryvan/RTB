@@ -12,19 +12,19 @@ public class LoginTest extends Base {
     // 1. Registration
     public void testFlow() throws InterruptedException {
         HomePage homepage = new HomePage(driver);
-        homepage.registrationSite(userName, userEmail, userPassword);
-        homepage.clickXiconGenresPopUp();
-        homepage.clickGoodreadsLabel();
-        homepage.clickSignOut();
-        homepage.clickGoodreadsHomeInscription();
-
-    // 2. Login with invalid credentials
-        homepage.loginSite(userEmail, invalidUserPassword);
-        homepage.inputPasswordLogin(userPassword);
-        homepage.clickSignInButton();
-        homepage.clickXiconGenresPopUp();
-        homepage.clickSignOut();
-        homepage.clickGoodreadsHomeInscription();
+//        homepage.registrationSite(userName, userEmail, userPassword);
+//        homepage.clickXiconGenresPopUp();
+//        homepage.clickGoodreadsLabel();
+//        homepage.clickSignOut();
+//        homepage.clickGoodreadsHomeInscription();
+//
+//    // 2. Login with invalid credentials
+//        homepage.loginSite(userEmail, invalidUserPassword);
+//        homepage.inputPasswordLogin(userPassword);
+//        homepage.clickSignInButton();
+//        homepage.clickXiconGenresPopUp();
+//        homepage.clickSignOut();
+//        homepage.clickGoodreadsHomeInscription();
 
     // 3. Login with valid credentials
         homepage.loginSite(userEmail, userPassword);
@@ -32,9 +32,9 @@ public class LoginTest extends Base {
 
     // 4. Search for “Best crime and mystery books”
         homepage.bookSearch(userBookTitle);
-        SearchPage searchpage = new SearchPage(driver);
 
     // 5. Mark top 3 books as “Want to read”
+        SearchPage searchpage = new SearchPage(driver);
         searchpage.clickWantToReadButtons123();
 
     // 6. Mark as read
