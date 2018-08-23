@@ -13,7 +13,7 @@ public class Base {
     protected static WebDriver driver;
 
     protected static String userName = "Dima";
-    protected static String userEmail = "van777dim@gmail.com";
+    protected static String userEmail = "van77dim@gmail.com";
     protected static String userPassword = "0679982026Dfyby";
     protected static String invalidUserPassword = "679982026Dfyby";
 
@@ -28,11 +28,11 @@ public class Base {
         driver = new ChromeDriver();
         driver.get("https://www.goodreads.com");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
     }
 
-//    @After
-//    public void tearDown(){
-//        driver.close();
-//    }
+    @After
+    public void tearDown(){
+        driver.close();
+    }
 }

@@ -24,6 +24,9 @@ public class HomePage extends Base {
     By emailFieldLoginLocator = By.id("userSignInFormEmail");
     By passwordFieldLoginLocator = By.id("user_password");
     By loginButtonLocator = By.cssSelector("input.gr-button");
+    By signInButtonLocator = By.cssSelector("input.gr-button");
+
+    By pageTitlelocator = By.cssSelector(".column_right > h1:nth-child(1)");
 
     By bookTitleFieldLocator = By.cssSelector(".searchBox__input--navbar");
     By searchIconLocator = By.cssSelector(".searchBox__icon--navbar");
@@ -91,6 +94,9 @@ public class HomePage extends Base {
 
     public void clickLoginButton (){
         driver.findElement(loginButtonLocator).click();
+    }
+    public void clickSignInButton (){
+        driver.findElement(signInButtonLocator).click();
     }
 
     public void loginSite(String userEmail, String userPassword) {
