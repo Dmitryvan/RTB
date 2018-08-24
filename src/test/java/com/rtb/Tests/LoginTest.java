@@ -12,19 +12,19 @@ public class LoginTest extends Base {
     // 1. Registration
     public void testFlow() throws InterruptedException {
         HomePage homepage = new HomePage(driver);
-//        homepage.registrationSite(userName, userEmail, userPassword);
-//        homepage.clickXiconGenresPopUp();
-//        homepage.clickGoodreadsLabel();
-//        homepage.clickSignOut();
-//        homepage.clickGoodreadsHomeInscription();
-//
-//    // 2. Login with invalid credentials
-//        homepage.loginSite(userEmail, invalidUserPassword);
-//        homepage.inputPasswordLogin(userPassword);
-//        homepage.clickSignInButton();
-//        homepage.clickXiconGenresPopUp();
-//        homepage.clickSignOut();
-//        homepage.clickGoodreadsHomeInscription();
+        homepage.registrationSite(userName, userEmail, userPassword);
+        homepage.clickXiconGenresPopUp();
+        homepage.clickGoodreadsLabel();
+        homepage.clickSignOut();
+        homepage.clickGoodreadsHomeInscription();
+
+    // 2. Login with invalid credentials
+        homepage.loginSite(userEmail, invalidUserPassword);
+        homepage.inputPasswordLogin(userPassword);
+        homepage.clickSignInButton();
+        homepage.clickXiconGenresPopUp();
+        homepage.clickSignOut();
+        homepage.clickGoodreadsHomeInscription();
 
     // 3. Login with valid credentials
         homepage.loginSite(userEmail, userPassword);

@@ -15,10 +15,9 @@ import static java.lang.Thread.*;
 public class SearchPage extends Base {
 
     static WebDriver driver;
+    static WebDriverWait wait;
 
     public SearchPage(WebDriver driver){this.driver = driver; }
-
-    static WebDriverWait wait;
 
     By wantToReadButtonLocator1 = By.cssSelector("#\\31 _book_34804524 > div:nth-child(1) > form:nth-child(1) > button:nth-child(13)");
     By wantToReadButtonLocator2 = By.cssSelector("#\\32 _book_6271941 > div:nth-child(1) > form:nth-child(1) > button:nth-child(13)");
@@ -42,7 +41,7 @@ public class SearchPage extends Base {
     By reviewFieldLocator = By.id("review_review_usertext");
 
     public void clickWantToReadButtons123 () {
-        WebDriverWait wait = (new WebDriverWait(driver,5));
+        WebDriverWait wait = (new WebDriverWait(driver,10));
         driver.findElement(wantToReadButtonLocator1).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(wantToReadButtonLocator1));
 
