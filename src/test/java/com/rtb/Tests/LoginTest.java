@@ -13,7 +13,7 @@ public class LoginTest extends Base {
     public void testFlow() throws InterruptedException {
         HomePage homepage = new HomePage(driver);
         homepage.registrationSite(userName, userEmail, userPassword);
-        homepage.clickXiconGenresPopUp();
+//        homepage.clickXiconGenresPopUp();
         homepage.clickGoodreadsLabel();
         homepage.clickSignOut();
         homepage.clickGoodreadsHomeInscription();
@@ -22,7 +22,7 @@ public class LoginTest extends Base {
         homepage.loginSite(userEmail, invalidUserPassword);
         homepage.inputPasswordLogin(userPassword);
         homepage.clickSignInButton();
-        homepage.clickXiconGenresPopUp();
+//        homepage.clickXiconGenresPopUp();
         homepage.clickSignOut();
         homepage.clickGoodreadsHomeInscription();
 
